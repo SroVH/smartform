@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form id="frm_297ef0ed29d8a9140129e50f7b9300b9" version="1"
+	name="신규제품검토요청화면">
+	<children>
+		<formEntity id="0" name="기안자" systemType="string" required="true"
+			system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="함수.로그인사용자(한번만)" type="mapping_form"
+						eachTime="false" mappingFormType="system_form" formName="함수"
+						fieldId="mis:getCurrentUser" fieldName="로그인사용자" valueFunc="value"></mapping>
+					<mapping name="기안자(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="self_form" formName="현재업무 항목" fieldId="0"
+						fieldName="기안자" valueFunc="value"></mapping>
+				</pre>
+				<post />
+			</mappings>
+			<format type="userField" viewingType="userField"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="159" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="3" name="기안일자" systemType="datetime"
+			required="true" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="함수.작성날짜(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="system_form" formName="함수" fieldId="mis:getCurrentDate"
+						fieldName="작성날짜" valueFunc="value"></mapping>
+					<mapping name="기안일자(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="self_form" formName="현재업무 항목" fieldId="3"
+						fieldName="기안일자" valueFunc="value"></mapping>
+				</pre>
+				<post />
+			</mappings>
+			<format type="dateChooser" viewingType="dateChooser">
+				<date yearUse="false" sunNotUse="false" monNotUse="false"
+					tueNotUse="false" wedNotUse="false" thuNotUse="false" friNotUse="false"
+					satNotUse="false" />
+			</format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="159" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="4" name="고객사" systemType="string" required="true"
+			system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="고객사 리스트.고객사(한번만)" type="mapping_form"
+						eachTime="false" mappingFormType="service_form" formName="고객사 리스트"
+						mappingServiceId="145" serviceName="고객사 리스트" fieldId="getCustomerListReturn"
+						fieldName="고객사" valueFunc="value" />
+				</pre>
+				<post>
+					<mapping name="제품사양서.고객사" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="25" formName="제품사양서"
+						fieldId="6" fieldName="고객사" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="comboBox" viewingType="comboBox">
+				<list type="" refCodeCategoryId="null" refCodeCategoryName="null"
+					listType="static">
+					<staticItems />
+				</list>
+			</format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="236" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="false" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="5" name="제품명" systemType="string" required="true"
+			system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="PKG TYPE 리스트.패키지명(한번만)" type="mapping_form"
+						eachTime="false" mappingFormType="service_form" formName="PKG TYPE 리스트"
+						mappingServiceId="147" serviceName="PKG TYPE 리스트" fieldId="getPKGTYPEListReturn"
+						fieldName="패키지명" valueFunc="value" />
+				</pre>
+				<post>
+					<mapping name="제품사양서.제품명" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="25" formName="제품사양서"
+						fieldId="7" fieldName="제품명" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="comboBox" viewingType="comboBox">
+				<list type="" refCodeCategoryId="null" refCodeCategoryName="null"
+					listType="static">
+					<staticItems />
+				</list>
+			</format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="236" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="false" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="6" name="패키지타입" systemType="string"
+			required="true" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="패키지타입(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="self_form" formName="현재업무 항목" fieldId="6"
+						fieldName="패키지타입" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품사양서.패키지타입" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="25" formName="제품사양서"
+						fieldId="8" fieldName="패키지타입" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="refFormField" viewingType="refFormField">
+				<refForm id="" ver="0">
+					<name></name>
+					<category id="null">null</category>
+					<field id=""></field>
+				</refForm>
+			</format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="236" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="7" name="LOT투입목적" systemType="string"
+			required="true" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="LOT투입목적(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="self_form" formName="현재업무 항목" fieldId="7"
+						fieldName="LOT투입목적" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품사양서.LOT투입목적" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="25" formName="제품사양서"
+						fieldId="10" fieldName="LOT투입목적" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="comboBox" viewingType="comboBox">
+				<list type="" refCodeCategoryId="null" refCodeCategoryName="null"
+					listType="static">
+					<staticItems>
+						<staticItem>ER</staticItem>
+						<staticItem>Service ER</staticItem>
+						<staticItem>Vol. Run</staticItem>
+						<staticItem>DOE Run</staticItem>
+						<staticItem>Qua. Run</staticItem>
+					</staticItems>
+				</list>
+			</format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="236" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="8" name="제심위 여부" systemType="boolean"
+			required="false" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="제심위 여부(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="self_form" formName="현재업무 항목" fieldId="8"
+						fieldName="제심위 여부" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품사양서.제심의 여부" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="25" formName="제품사양서"
+						fieldId="11" fieldName="제심의 여부" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="checkBox" viewingType="checkBox"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="76" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="9" name="최종 고객" systemType="string"
+			required="true" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="최종 고객(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="self_form" formName="현재업무 항목" fieldId="9"
+						fieldName="최종 고객" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품사양서.최종 고객" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="25" formName="제품사양서"
+						fieldId="12" fieldName="최종 고객" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="textInput" viewingType="textInput"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="236" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="false" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="10" name="제품용도" systemType="string"
+			required="true" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="제품용도(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="self_form" formName="현재업무 항목" fieldId="10"
+						fieldName="제품용도" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품사양서.제품용도" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="25" formName="제품사양서"
+						fieldId="13" fieldName="제품용도" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="textInput" viewingType="textInput"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="236" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="11" name="진행목적" systemType="string"
+			required="true" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="진행목적(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="self_form" formName="현재업무 항목" fieldId="11"
+						fieldName="진행목적" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품사양서.진행 목적" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="25" formName="제품사양서"
+						fieldId="14" fieldName="진행 목적" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="textInput" viewingType="textInput"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="236" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="12" name="기존 조립처" systemType="string"
+			required="false" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="기존 조립처(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="self_form" formName="현재업무 항목" fieldId="12"
+						fieldName="기존 조립처" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품사양서.기존 조립처" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="25" formName="제품사양서"
+						fieldId="15" fieldName="기존 조립처" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="textInput" viewingType="textInput"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="236" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="15" name="[일반항목]" systemType="string"
+			required="false" system="false">
+			<children />
+			<format type="radioButton" viewingType="radioButton">
+				<list type="" refCodeCategoryId="null" refCodeCategoryName="null"
+					listType="static">
+					<staticItems />
+				</list>
+			</format>
+			<graphic hidden="false" readOnly="true" labelWidth="96"
+				contentWidth="274" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="16" name="[제품사양서]" systemType="string"
+			required="false" system="false">
+			<children />
+			<format type="radioButton" viewingType="radioButton">
+				<list type="" refCodeCategoryId="null" refCodeCategoryName="null"
+					listType="static">
+					<staticItems />
+				</list>
+			</format>
+			<graphic hidden="false" readOnly="true" labelWidth="96"
+				contentWidth="274" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="17" name="사양서 이름" systemType="string"
+			required="true" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="사양서 이름(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="self_form" formName="현재업무 항목" fieldId="17"
+						fieldName="사양서 이름" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품사양서.제품사양서이름" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="25" formName="제품사양서"
+						fieldId="0" fieldName="제품사양서이름" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="textInput" viewingType="textInput"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="236" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="18" name="사양서 번호" systemType="string"
+			required="true" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="사양서 번호(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="self_form" formName="현재업무 항목" fieldId="18"
+						fieldName="사양서 번호" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품사양서.제품사양서번호" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="25" formName="제품사양서"
+						fieldId="1" fieldName="제품사양서번호" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="textInput" viewingType="textInput"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="236" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="19" name="사양서 작성자" systemType="string"
+			required="true" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="함수.로그인사용자(한번만)" type="mapping_form"
+						eachTime="false" mappingFormType="system_form" formName="함수"
+						fieldId="mis:getCurrentUser" fieldName="로그인사용자" valueFunc="value"></mapping>
+					<mapping name="사양서 작성자(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="self_form" formName="현재업무 항목" fieldId="19"
+						fieldName="사양서 작성자" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품사양서.작성자" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="25" formName="제품사양서"
+						fieldId="2" fieldName="작성자" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="userField" viewingType="userField"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="159" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="20" name="사양서 작성일자" systemType="datetime"
+			required="true" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="함수.작성날짜(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="system_form" formName="함수" fieldId="mis:getCurrentDate"
+						fieldName="작성날짜" valueFunc="value"></mapping>
+					<mapping name="사양서 작성일자(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="self_form" formName="현재업무 항목" fieldId="20"
+						fieldName="사양서 작성일자" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품사양서.작성일자" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="25" formName="제품사양서"
+						fieldId="3" fieldName="작성일자" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="dateChooser" viewingType="dateChooser">
+				<date yearUse="false" sunNotUse="false" monNotUse="false"
+					tueNotUse="false" wedNotUse="false" thuNotUse="false" friNotUse="false"
+					satNotUse="false" />
+			</format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="159" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="21" name="사양서 Rev. No." systemType="string"
+			required="false" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="사양서 Rev. No.(한번만)" type="mapping_form"
+						eachTime="false" mappingFormType="self_form" formName="현재업무 항목"
+						fieldId="21" fieldName="사양서 Rev. No." valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품사양서.Rev. NO" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="25" formName="제품사양서"
+						fieldId="17" fieldName="Rev. NO" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="textInput" viewingType="textInput"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="236" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="22" name="사양서 내용요약" systemType="text"
+			required="false" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="사양서 내용요약(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="self_form" formName="현재업무 항목" fieldId="22"
+						fieldName="사양서 내용요약" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품사양서.내용 요약" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="25" formName="제품사양서"
+						fieldId="4" fieldName="내용 요약" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="richEditor" viewingType="richEditor"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="632" height="215" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="23" name="제품사양서" systemType="string"
+			required="true" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="제품사양서(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="self_form" formName="현재업무 항목" fieldId="23"
+						fieldName="제품사양서" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품사양서.제품사양" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="25" formName="제품사양서"
+						fieldId="5" fieldName="제품사양" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="fileField" viewingType="fileField"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="96"
+				contentWidth="344" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="41" name="[Net List]" systemType="string"
+			required="false" system="false">
+			<children />
+			<format type="radioButton" viewingType="radioButton">
+				<list type="" refCodeCategoryId="null" refCodeCategoryName="null"
+					listType="static">
+					<staticItems />
+				</list>
+			</format>
+			<graphic hidden="false" readOnly="true" labelWidth="53"
+				contentWidth="152" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="42" name="Net List 이름" systemType="string"
+			required="true" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="Net List 이름(한번만)" type="mapping_form"
+						eachTime="false" mappingFormType="self_form" formName="현재업무 항목"
+						fieldId="42" fieldName="Net List 이름" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품개발문서관리.문서이름" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="70" formName="제품개발문서관리"
+						fieldId="0" fieldName="문서이름" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="textInput" viewingType="textInput"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="53"
+				contentWidth="132" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="43" name="Net List 번호" systemType="string"
+			required="true" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="Net List 번호(한번만)" type="mapping_form"
+						eachTime="false" mappingFormType="self_form" formName="현재업무 항목"
+						fieldId="43" fieldName="Net List 번호" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품개발문서관리.문서번호" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="70" formName="제품개발문서관리"
+						fieldId="1" fieldName="문서번호" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="textInput" viewingType="textInput"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="53"
+				contentWidth="132" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="44" name="Net List 작성자" systemType="string"
+			required="true" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="함수.로그인사용자(한번만)" type="mapping_form"
+						eachTime="false" mappingFormType="system_form" formName="함수"
+						fieldId="mis:getCurrentUser" fieldName="로그인사용자" valueFunc="value"></mapping>
+					<mapping name="Net List 작성자(한번만)" type="mapping_form"
+						eachTime="false" mappingFormType="self_form" formName="현재업무 항목"
+						fieldId="44" fieldName="Net List 작성자" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품개발문서관리.작성자" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="70" formName="제품개발문서관리"
+						fieldId="2" fieldName="작성자" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="userField" viewingType="userField"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="53"
+				contentWidth="89" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="45" name="Net List 작성일자" systemType="datetime"
+			required="true" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="함수.작성날짜(한번만)" type="mapping_form" eachTime="false"
+						mappingFormType="system_form" formName="함수" fieldId="mis:getCurrentDate"
+						fieldName="작성날짜" valueFunc="value"></mapping>
+					<mapping name="Net List 작성일자(한번만)" type="mapping_form"
+						eachTime="false" mappingFormType="self_form" formName="현재업무 항목"
+						fieldId="45" fieldName="Net List 작성일자" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품개발문서관리.작성일자" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="70" formName="제품개발문서관리"
+						fieldId="3" fieldName="작성일자" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="dateChooser" viewingType="dateChooser">
+				<date yearUse="false" sunNotUse="false" monNotUse="false"
+					tueNotUse="false" wedNotUse="false" thuNotUse="false" friNotUse="false"
+					satNotUse="false" />
+			</format>
+			<graphic hidden="false" readOnly="false" labelWidth="53"
+				contentWidth="89" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="46" name="Net List 내용요약" systemType="text"
+			required="false" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="Net List 내용요약(한번만)" type="mapping_form"
+						eachTime="false" mappingFormType="self_form" formName="현재업무 항목"
+						fieldId="46" fieldName="Net List 내용요약" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품개발문서관리.내용 요약" type="mapping_form"
+						eachTime="false" mappingFormType="info_form" mappingFormId="70"
+						formName="제품개발문서관리" fieldId="7" fieldName="내용 요약" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="richEditor" viewingType="richEditor"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="53"
+				contentWidth="356" height="196" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="47" name="Net List파일" systemType="string"
+			required="true" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="Net List파일(한번만)" type="mapping_form"
+						eachTime="false" mappingFormType="self_form" formName="현재업무 항목"
+						fieldId="47" fieldName="Net List파일" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품개발문서관리.첨부문서" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="70" formName="제품개발문서관리"
+						fieldId="8" fieldName="첨부문서" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="fileField" viewingType="fileField"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="53"
+				contentWidth="193" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="68" name="문서종류" systemType="string"
+			required="false" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="'Net List'(한번만)" type="mapping_form"
+						eachTime="false" mappingFormType="expression" formName="직접입력"
+						fieldName="'Net List'" valueFunc="value"></mapping>
+				</pre>
+				<post>
+					<mapping name="제품개발문서관리.문서종류" type="mapping_form" eachTime="false"
+						mappingFormType="info_form" mappingFormId="70" formName="제품개발문서관리"
+						fieldId="4" fieldName="문서종류" valueFunc="value"></mapping>
+				</post>
+			</mappings>
+			<format type="textInput" viewingType="textInput"></format>
+			<graphic hidden="true" readOnly="false" labelWidth="53"
+				contentWidth="133" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="100" name="제품사양서양식" systemType="string"
+			required="false" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="제품사양서양식.표준양식(한번만)" type="mapping_form"
+						eachTime="false" mappingFormType="info_form" mappingFormId="62"
+						formName="제품사양서양식" fieldId="11" fieldName="표준양식" valueFunc="value"></mapping>
+				</pre>
+				<post />
+			</mappings>
+			<format type="fileField" viewingType="fileField"></format>
+			<graphic hidden="false" readOnly="true" labelWidth="87"
+				contentWidth="303" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="103" name="Net List 양식" systemType="string"
+			required="false" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="Net List 양식.표준양식(한번만)" type="mapping_form"
+						eachTime="false" mappingFormType="info_form" mappingFormId="33"
+						formName="Net List 양식" fieldId="11" fieldName="표준양식" valueFunc="value"></mapping>
+				</pre>
+				<post />
+			</mappings>
+			<format type="fileField" viewingType="fileField"></format>
+			<graphic hidden="false" readOnly="true" labelWidth="87"
+				contentWidth="303" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="124" name="Forecast" systemType="string"
+			required="true" system="false">
+			<children />
+			<format type="textInput" viewingType="textInput"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="73"
+				contentWidth="177" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="false" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="125" name="양산시점" systemType="string"
+			required="false" system="false">
+			<children />
+			<format type="textInput" viewingType="textInput"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="73"
+				contentWidth="177" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="130" name="담당영업팀장" systemType="string"
+			required="true" system="false">
+			<children />
+			<format type="userField" viewingType="userField"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="92"
+				contentWidth="150" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="131" name="담당DM" systemType="string"
+			required="true" system="false">
+			<children />
+			<format type="userField" viewingType="userField"></format>
+			<graphic hidden="false" readOnly="false" labelWidth="92"
+				contentWidth="150" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="149" name="항목151" systemType="string"
+			required="false" system="false">
+			<children />
+			<mappings>
+				<pre>
+					<mapping name="항목153 + 항목154(한번만)" type="expression"
+						eachTime="false">
+						mis:getData('self_form', 'this', '151', 'value') +
+						mis:getData('self_form', 'this', '152', 'value')
+						<expressionTree>
+							<node operator="+" operatorName="+" mappingType="self_form"
+								mappingTypeName="현재업무 항목" formLinkName="현재업무 항목" valueFunction="value"
+								valueFunctionName="값" label="+ 항목153" fieldId="151" fieldName="항목153" />
+							<node operator="+" operatorName="+" mappingType="self_form"
+								mappingTypeName="현재업무 항목" formLinkName="현재업무 항목" valueFunction="value"
+								valueFunctionName="값" label="+ 항목154" fieldId="152" fieldName="항목154" />
+						</expressionTree>
+					</mapping>
+				</pre>
+				<post />
+			</mappings>
+			<format type="textInput" viewingType="textInput"></format>
+			<graphic hidden="true" readOnly="false" labelWidth="90"
+				contentWidth="214" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="151" name="항목153" systemType="string"
+			required="false" system="false">
+			<children />
+			<format type="textInput" viewingType="textInput"></format>
+			<graphic hidden="true" readOnly="false" labelWidth="90"
+				contentWidth="214" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+		<formEntity id="152" name="항목154" systemType="string"
+			required="false" system="false">
+			<children />
+			<format type="textInput" viewingType="textInput"></format>
+			<graphic hidden="true" readOnly="false" labelWidth="90"
+				contentWidth="214" height="23" cellSize="1" fitWidth="false"
+				verticalScrollPolicy="true" textAlign="left" fitToScreen="false" />
+		</formEntity>
+	</children>
+	<mappingForms>
+		<mappingForm id="25" name="제품사양서"
+			targetFormId="frm_297ef0ed29d8a9140129e50f7bc200d1">
+			<conds operator="and">
+				<cond operator="=">
+					<first fieldId="0" fieldName="제품사양서이름" type="other" />
+					<second fieldId="17" fieldName="사양서 이름" type="self" />
+				</cond>
+				<cond operator="=">
+					<first fieldId="1" fieldName="제품사양서번호" type="other" />
+					<second fieldId="18" fieldName="사양서 번호" type="self" />
+				</cond>
+			</conds>
+		</mappingForm>
+		<mappingForm id="33" name="Net List 양식"
+			targetFormId="frm_297ef0ed29d8a9140129e50f7bc200d2">
+			<conds operator="and">
+				<cond operator="=">
+					<first fieldId="6" fieldName="양식이름" type="other" />
+					<second type="expression">'Net List'</second>
+				</cond>
+			</conds>
+		</mappingForm>
+		<mappingForm id="62" name="제품사양서양식"
+			targetFormId="frm_297ef0ed29d8a9140129e50f7bc200d2">
+			<conds operator="and">
+				<cond operator="=">
+					<first fieldId="6" fieldName="양식이름" type="other" />
+					<second type="expression">'제품사양서'</second>
+				</cond>
+			</conds>
+		</mappingForm>
+		<mappingForm id="70" name="제품개발문서관리"
+			targetFormId="frm_297ef0ed29d8a9140129e50f7bc200d3">
+			<conds operator="and">
+				<cond operator="=">
+					<first fieldId="0" fieldName="문서이름" type="other" />
+					<second fieldId="42" fieldName="List List 이름" type="self" />
+				</cond>
+				<cond operator="=">
+					<first fieldId="1" fieldName="문서번호" type="other" />
+					<second fieldId="43" fieldName="Net List 번호" type="self" />
+				</cond>
+			</conds>
+		</mappingForm>
+	</mappingForms>
+	<mappingServices>
+		<mappingService id="145" name="고객사 리스트"
+			targetServiceId="5ef4e5632b185c16012b185d90ec0002">
+			<ActualParameters Execution="before">
+				<ActualParmeter Id="getCustomerListReturn" Name="고객사"
+					DataType="ArrayOf_xsd_string" Mode="OUT" TargetType="self"
+					ValueType="value" />
+			</ActualParameters>
+		</mappingService>
+		<mappingService id="147" name="PKG TYPE 리스트"
+			targetServiceId="5ef4e5632b185c16012b187e58fe0016">
+			<ActualParameters Execution="before">
+				<ActualParmeter Id="customer" Name="고객사명" DataType="string"
+					Mode="IN" TargetType="self" FieldId="4" FieldName="고객사" ValueType="value" />
+				<ActualParmeter Id="getPKGTYPEListReturn" Name="패키지명"
+					DataType="ArrayOf_xsd_string" Mode="OUT" TargetType="self"
+					ValueType="value" />
+			</ActualParameters>
+		</mappingService>
+	</mappingServices>
+	<layout type="grid_layout">
+		<columns>
+			<gridColumn size="489.83398494317026" labelSize="65.14311092972592" />
+			<gridColumn size="449.8553902181259" labelSize="65.14311092972592" />
+		</columns>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="0" />
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="3" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="130" />
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="131" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="2" rowSpan="1"
+				gridColumnIndex="0" fieldId="" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="2" rowSpan="1"
+				gridColumnIndex="0" fieldId="15" />
+		</gridRow>
+		<gridRow size="30.5">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="4" />
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="5" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="6" />
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="7" />
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="8" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="9" />
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="10" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="11" />
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="12" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="124" />
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="125" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="2" rowSpan="1"
+				gridColumnIndex="0" fieldId="" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="2" rowSpan="1"
+				gridColumnIndex="0" fieldId="16" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="17" />
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="18" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="19" />
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="20" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="21" />
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="" />
+		</gridRow>
+		<gridRow size="222">
+			<gridCell size="469.84468758064804" span="2" rowSpan="1"
+				gridColumnIndex="0" fieldId="22" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="23" />
+			<gridCell size="110.90372121340795" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="100" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="2" rowSpan="1"
+				gridColumnIndex="0" fieldId="" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="2" rowSpan="1"
+				gridColumnIndex="0" fieldId="41" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="42" />
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="43" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="44" />
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="45" />
+		</gridRow>
+		<gridRow size="203.5">
+			<gridCell size="469.84468758064804" span="2" rowSpan="1"
+				gridColumnIndex="0" fieldId="46" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="47" />
+			<gridCell size="110.90372121340795" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="103" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="68" />
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="149" />
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="" />
+		</gridRow>
+		<gridRow size="30">
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="0" fieldId="151" />
+			<gridCell size="469.84468758064804" span="1" rowSpan="1"
+				gridColumnIndex="1" fieldId="152" />
+		</gridRow>
+	</layout>
+	<graphic width="953.0000000000001" height="1342"
+		currentEntityNum="153" currentMappingNum="0">
+		<space />
+	</graphic>
+</form>
