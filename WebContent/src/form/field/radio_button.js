@@ -20,7 +20,7 @@ SmartWorks.FormRuntime.RadioButtonBuilder.build = function(config) {
 	var readOnly = $graphic.attr('readOnly') == 'true' || options.mode == 'view';
 	var id = $entity.attr('id');
 
-	$html = $('<div class="formRadioField" id="' + id + 'Radio"></div>');
+	$html = $('<div class="formRadioField" id="' + id + '_container"></div>');
 
 	if ($graphic.attr('hidden') == 'true')
 		$html.hide();
@@ -32,7 +32,6 @@ SmartWorks.FormRuntime.RadioButtonBuilder.build = function(config) {
 		var text = $staticItem.text();
 		var $input = $('<input type="radio" name="' + id + '_input" value="' + text + '">' + text + '</input>');
 		$input.attr('fieldId', SmartWorks.generateFormFieldId(options.workspaceId, id));
-		$input.attr('workspaceId', options.workspaceId);
 		if (readOnly) {
 			$input.attr('disabled', 'disabled');
 		}
