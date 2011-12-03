@@ -1,4 +1,4 @@
-GridLayout = function(config) {
+SmartWorks.GridLayout = function(config) {
 	this.options = {
 		target : $('<div></div>'),
 		formXml : ''

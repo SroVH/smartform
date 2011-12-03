@@ -7,7 +7,7 @@ test('columnsize', function() {
 	$.ajax({
 		url: '../data/basic_form_01.xml',
 		success: function(data) {
-			layout = new GridLayout({
+			layout = new SmartWorks.GridLayout({
 				target : $('#form_layout')[0],
 				formXml : data
 			});
