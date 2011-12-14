@@ -4,42 +4,50 @@ SmartWorks.FormRuntime.RadioButtonBuilder = {};
 
 SmartWorks.FormRuntime.RadioButtonBuilder.build = function(config) {
 	var options = {
-		mode : 'view', // view or edit
+		mode : 'edit', // view or edit
 		container : $('<div></div>'),
-		entityXml : '',
-		workspaceId : '',
-		id : ''
+		entity : null,
+		value : ''
 	};
 
 	SmartWorks.extend(options, config);
 
-	$entity = $(options.entityXml);
-	$graphic = $entity.children('graphic');
-	$format = $entity.children('format');
+	var $entity = options.entity;
+	var $graphic = $entity.children('graphic');
+	var $format = $entity.children('format');
 
 	var readOnly = $graphic.attr('readOnly') == 'true' || options.mode == 'view';
 	var id = $entity.attr('id');
-
-	$html = $('<div class="formRadioField" id="' + id + '_container"></div>');
-
-	if ($graphic.attr('hidden') == 'true')
-		$html.hide();
-
-	$staticItems = $format.find('list staticItems staticItem');
-
+	var name = $entity.attr('name');
+	
+	var $label = $('<label>' + name + '</label>');
+	$label.appendTo(options.container);
+	
+	var $staticItems = $format.find('list staticItems staticItem');
+	var $input_container = $('<span></span>');
+	
 	for ( var i = 0; i < $staticItems.length; i++) {
-		$staticItem = $staticItems.eq(i);
+		var $staticItem = $staticItems.eq(i);
 		var text = $staticItem.text();
-		var $input = $('<input type="radio" name="' + id + '_input" value="' + text + '">' + text + '</input>');
-		$input.attr('fieldId', SmartWorks.generateFormFieldId(options.workspaceId, id));
+		var checked = (options.value === text ) ? 'checked' : '' ;
+
+		console.dir(checked);
+		
+		var $input = $('<input type="radio" ' + checked + ' name="' + id + '" value="' + text + '">' + text + '</input>');
+		
+		$input.attr('fieldId', id);
 		if (readOnly) {
 			$input.attr('disabled', 'disabled');
 		}
-		$input.appendTo($html);
-		console.log($input);
+		$input.appendTo($input_container);
 	}
 
-	$html.appendTo(options.container);
+	$input_container.appendTo(options.container);
+
+	if ($graphic.attr('hidden') == 'true') {
+		$label.hide();
+		$input_container.hide();
+	}
 
 	return options.container;
 };

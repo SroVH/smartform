@@ -28,12 +28,9 @@ test('builder', function() {
 	SmartWorks.FormRuntime.PercentInputBuilder.build({
 		mode : 'edit', // view or edit
 		container : $('#percent_input'),
-		entityXml : entityXml,
-		workspaceId : 'wwwwwww',
-		value : 'Sample Value'
+		entity : $(entityXml),
+		value : '0.5'
 	});
-	
-	console.log($('#percent_input'));
 
 //	equal(container.getColumnSize(), 2, 'Column Size Calculation');
 //	equal(container.getTable().find('tr').length, 4, 'Row Size Calculation');

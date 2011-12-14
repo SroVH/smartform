@@ -38,11 +38,9 @@ test('builder', function() {
 	SmartWorks.FormRuntime.RadioButtonBuilder.build({
 		mode : 'view', // view or edit
 		container : $('#radio_button'),
-		entityXml : entityXml,
-		workspaceId : 'wwwwwww'		
+		entity : $(entityXml),
+		value : 'Service ER'
 	});
-	
-	console.log($('#radio_button'));
 
 //	equal(container.getColumnSize(), 2, 'Column Size Calculation');
 //	equal(container.getTable().find('tr').length, 4, 'Row Size Calculation');

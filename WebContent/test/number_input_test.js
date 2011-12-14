@@ -23,13 +23,9 @@ test('builder', function() {
 	SmartWorks.FormRuntime.NumberInputBuilder.build({
 		mode : 'edit', // view or edit
 		container : $('#number_input'),
-		entityXml : entityXml,
-		workspaceId : 'wwwwwww',
-		id : 'didididi'
+		entity : $(entityXml)
 	});
 	
-	console.log($('#number_input'));
-
 //	equal(container.getColumnSize(), 2, 'Column Size Calculation');
 //	equal(container.getTable().find('tr').length, 4, 'Row Size Calculation');
 });

@@ -24,3 +24,4 @@ SmartWorks.extend = function(defaults, overide) {
 SmartWorks.generateFormFieldId = function(workspaceId, id) {
 	return workspaceId + '_formField_' + id;
 };
+
